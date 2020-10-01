@@ -75,25 +75,6 @@ function showData(data) {
 }
 
 
-// display final result in DO
-// function showData(data) {
-
-//     result.innerHTML = `
-//     <ul class="song-list">
-//       ${data.data
-//         .map(song=> `<li>
-//                     <div>
-
-//                         <strong>${song.artist.name}</strong> -${song.title} 
-//                     </div>
-//                     <span data-artist="${song.artist.name}" data-songtitle="${song.title}"> get lyrics</span>
-//                 </li>`
-//         )
-//         .join('')}
-//     </ul>
-//   `;
-// }
-
 // event listener in get lyrics button
 results.addEventListener('click', e => {
     let clickedElement = e.target.parentElement;
