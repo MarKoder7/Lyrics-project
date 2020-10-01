@@ -8,10 +8,31 @@ body {
   font-family: "Noto Sans KR", sans-serif;
   line-height: 1.5;
   height: 100%;
-  color: #fff;
+  color: white;
   margin: 0;
 }
 
+
+#form {
+  text-align: center;
+}
+
+
+
+.home-h1 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-image: linear-gradient(to left, white, orange, green, yellow, red, green, lightblue);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-style: bold;
+  font-size: 5rem;
+  text-align: center;
+  font-family: 'Monoton', cursive;
+
+}
 
 
 label {
@@ -20,30 +41,54 @@ label {
 }
 
 input {
+
+  outline: none;
   height: 4rem;
   width: 50%;
   font-size: 200%;
   padding: 0.2rem 1rem;
-  border-radius: 40px;
-  border-style: none;
-  margin-left: 20px;
+  border-radius: 50px;
+  border: none;
+  margin-top: 0px;
+  font-weight: 100;
 
 }
+
+.back-btn {
+  margin-top: 25px;
+  margin-left: 20px;
+  border-radius: 20px;
+  outline: none;
+  height: 50px;
+  width: 200px;
+  background-color: #9bd231;
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+  visibility: hidden;
+  cursor: pointer;
+
+}
+
+.back-btn:hover {
+  background: gold;
+}
+
 
 .menu-btn {
   position: absolute;
   z-index: 3;
-  right: 35px;
-  top: 35px;
+  right: 50px;
+  top: 50px;
   cursor: pointer;
   transition: all 0.5s ease-out;
 }
 
 .menu-btn .menu-line {
-  width: 28px;
-  height: 3px;
-  margin: 0 0 5px 0;
-  background: white;
+  width: 60px;
+  height: 5px;
+  margin: 0 0 10px 0;
+  background: #84f72e;
   transition: all 0.5s ease-out;
 }
 
@@ -52,7 +97,7 @@ input {
 }
 
 .menu-btn.show .menu-line:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
+  transform: rotate(45deg) translate(15px, 15px);
 }
 
 .menu-btn.show .menu-line:nth-child(2) {
@@ -89,7 +134,7 @@ input {
 .menu-nav {
   margin: 0;
   padding: 0;
-  background-color: rgba(89, 89, 89, 0.9);
+  background-color: rgb(62 79 80 / 90%);
   list-style: none;
   transform: translate3d(0, -100%, 0);
   transition: all 0.5s ease-out;
@@ -100,10 +145,10 @@ input {
 }
 
 .menu-branding {
-  background: #666666;
+  background-color: teal;
   transform: translate3d(0, 100%, 0);
-  background-color: rgba(102, 102, 102, 0.9);
   transition: all 0.5s ease-out;
+
 }
 
 .menu-branding.show {
@@ -124,7 +169,7 @@ input {
 }
 
 .menu .menu-item.current>a {
-  color: steelblue;
+  color: #84f72e;
 }
 
 .menu .nav-link {
@@ -134,7 +179,7 @@ input {
   text-transform: uppercase;
   padding: 1rem 0;
   font-weight: 300;
-  color: #666666;
+  color: #24ffb8;
   text-decoration: none;
   transition: all 0.5s ease-out;
 }
@@ -155,16 +200,9 @@ input {
   transition-delay: 0.3s;
 }
 
-header {
-  position: fixed;
-  z-index: 2;
-  width: 100%;
-}
-
 .searchBtn {
   padding: 20px 10 px;
 }
-
 
 .result {
   margin-top: 20px;
@@ -174,8 +212,26 @@ header {
 .lyrics {
 
   font-family: 'Merienda One', cursive;
-  font-style: italic;
   font-size: 30px;
-  color: #ecef33;
+  color: #c9ff61;
   text-align: center;
+
 }
+
+.container {
+  border: solid black;
+  box-sizing: border-box;
+  display: block;
+
+}
+
+/* .image-box {
+
+  background: url('../images/Lyrics\ Logo.jpg') center center no-repeat;
+  background-size: 15vh;
+  color: white;
+  min-height: 15vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */

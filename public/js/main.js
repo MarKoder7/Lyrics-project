@@ -1,6 +1,7 @@
 const form = document.getElementById('form')
 const search = document.getElementById('search')
-const result = document.getElementById('result')
+const results = document.getElementById('result')
+let songList = "";
 
 
 /// api URL ///
@@ -32,10 +33,9 @@ async function searchSong(searchValue) {
         console.log('Not Found');
         // alert("Song Lyrics not found")
         document.write("Not Found")
-
     }
 
-    result.innerHTML = "";
+    results.innerHTML = "";
     console.log(data)
     showData(data)
 }
@@ -53,25 +53,27 @@ function showData(data) {
         songElement.setAttribute('song-name', songTitle)
         songElement.setAttribute('artist', artist)
 
+        const h3 = document.createElement('h3')
+        h3.textContent = `${songTitle}- ${artist}`
+        songElement.appendChild(h3)
 
         const img = document.createElement('img');
         img.src = song.album.cover_big;
+        img.id = ('img');
         songElement.appendChild(img);
 
+        const container = document.createElement("div");
+        container.className = "container";
+        container.appendChild(songElement)
 
-        const mediaBody = document.createElement("div");
-        mediaBody.className = "media-body";
-        songElement.appendChild(mediaBody);
+        results.appendChild(songElement)
 
-        const h3 = document.createElement('h3')
-        h3.textContent = `${songTitle}- ${artist}`
-        mediaBody.appendChild(h3)
+        songList = results.innerHTML;
 
-
-        result.appendChild(songElement)
 
     });
 }
+
 
 // display final result in DO
 // function showData(data) {
@@ -93,7 +95,7 @@ function showData(data) {
 // }
 
 // event listener in get lyrics button
-result.addEventListener('click', e => {
+results.addEventListener('click', e => {
     let clickedElement = e.target.parentElement;
     console.log(clickedElement.tagName);
     console.log(clickedElement.parentElement.tagName);
@@ -116,6 +118,19 @@ result.addEventListener('click', e => {
 })
 
 
+// Back button function
+document.addEventListener('DOMContentLoaded', function () {
+
+    document.getElementById('back-btn').addEventListener('click', function () {
+        if (songList.length != 0) {
+
+            results.innerHTML = songList;
+            document.getElementById('back-btn').style.visibility = 'hidden'
+
+        }
+
+    })
+})
 
 // Get lyrics for song
 async function getLyrics(artist, songTitle) {
@@ -126,23 +141,29 @@ async function getLyrics(artist, songTitle) {
 
     let lyricsDiv = document.createElement('div')
     lyricsDiv.classList.add("lyrics")
-    let content = document.createElement('p')
-    lyricsDiv.appendChild(content)
 
-    content.innerHTML = lyrics;
+
+    // var button = document.createElement("button");
+    // button.innerHTML = "GO BACK";
+    // button.className = "back-btn"
+    // lyricsDiv.appendChild(button)
+
 
     let h2 = document.createElement('h2');
-    h2 = `${artist}- ${songTitle}`;
+    h2.innerText = `${artist}- ${songTitle}`;
+    lyricsDiv.appendChild(h2)
+
+
+    let content = document.createElement('p')
+    content.innerHTML = lyrics;
+    lyricsDiv.appendChild(content)
 
 
 
+    results.innerHTML = "";
 
-    result.innerHTML = "";
+    results.appendChild(lyricsDiv);
 
-    result.appendChild(lyricsDiv);
-
-
-    // result.innerHTML = `<h2><strong>${artist}</strong> - ${songTitle}</h2>
-    //     <p>${lyrics}</p>`;
+    document.getElementById('back-btn').style.visibility = 'visible'
 
 }
