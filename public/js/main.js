@@ -1,7 +1,8 @@
 const form = document.getElementById('form')
 const search = document.getElementById('search')
-const results = document.getElementById('result')
+const results = document.getElementById('results')
 let songList = "";
+
 
 
 /// api URL ///
@@ -34,6 +35,7 @@ async function searchSong(searchValue) {
         // alert("Song Lyrics not found")
         document.write("Not Found")
     }
+
 
     results.innerHTML = "";
     console.log(data)
@@ -94,20 +96,21 @@ results.addEventListener('click', e => {
         const songTitle = clickedElement.getAttribute('song-name');
 
         getLyrics(artist, songTitle)
+
     }
+
 })
 
 
 // Back button function
 document.addEventListener('DOMContentLoaded', function () {
 
+
     document.getElementById('back-btn').addEventListener('click', function () {
-        if (songList.length != 0) {
 
-            results.innerHTML = songList;
-            document.getElementById('back-btn').style.visibility = 'hidden'
 
-        }
+        results.innerHTML = songList;
+        document.getElementById('back-btn').style.visibility = 'hidden'
 
     })
 })
@@ -121,6 +124,7 @@ async function getLyrics(artist, songTitle) {
 
     let lyricsDiv = document.createElement('div')
     lyricsDiv.classList.add("lyrics")
+    lyricsDiv.id = 'lyrics';
 
 
     // var button = document.createElement("button");
@@ -131,6 +135,7 @@ async function getLyrics(artist, songTitle) {
 
     let h2 = document.createElement('h2');
     h2.innerText = `${artist}- ${songTitle}`;
+
     lyricsDiv.appendChild(h2)
 
 
@@ -139,11 +144,23 @@ async function getLyrics(artist, songTitle) {
     lyricsDiv.appendChild(content)
 
 
-
     results.innerHTML = "";
 
     results.appendChild(lyricsDiv);
 
-    document.getElementById('back-btn').style.visibility = 'visible'
 
+    document.getElementById('back-btn').style.visibility = 'visible';
+
+    //back to top arrow
+    // document.getElementById('arrow-container').style.visibility = 'visible';
+
+
+
+    //Scroll to the top of page//
+    // window.scrollTo(0, 0);
+    window.scroll({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+    });
 }

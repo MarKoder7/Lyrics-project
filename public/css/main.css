@@ -9,15 +9,8 @@ body {
   line-height: 1.5;
   height: 100%;
   color: white;
-  margin: 0;
+  margin-top: 0px;
 }
-
-
-#form {
-  text-align: center;
-}
-
-
 
 .home-h1 {
   margin-top: 10px;
@@ -34,46 +27,26 @@ body {
 
 }
 
-
 label {
-  font-weight: 200;
-  font-size: 4rem;
+  /* color: #00f3dc; */
+  display: block;
+  font-size: 2rem;
 }
 
-input {
+.search-input {
 
   outline: none;
-  height: 4rem;
+  height: 3.5rem;
   width: 50%;
   font-size: 200%;
+  font-weight: 100;
   padding: 0.2rem 1rem;
   border-radius: 50px;
   border: none;
   margin-top: 0px;
-  font-weight: 100;
+  margin-left: 25vw;
 
 }
-
-.back-btn {
-  margin-top: 25px;
-  margin-left: 20px;
-  border-radius: 20px;
-  outline: none;
-  height: 50px;
-  width: 200px;
-  background-color: #9bd231;
-  color: black;
-  font-size: 20px;
-  font-weight: bold;
-  visibility: hidden;
-  cursor: pointer;
-
-}
-
-.back-btn:hover {
-  background: gold;
-}
-
 
 .menu-btn {
   position: absolute;
@@ -204,7 +177,7 @@ input {
   padding: 20px 10 px;
 }
 
-.result {
+.results {
   margin-top: 20px;
   margin-left: 20px;
 }
@@ -223,6 +196,73 @@ input {
   box-sizing: border-box;
   display: block;
 
+}
+
+.arrow {
+  box-sizing: border-box;
+  height: 3vw;
+  width: 3vw;
+  border: solid orangered;
+  border-width: 0px 8px 8px 0px;
+  transform: rotate(222.5deg);
+  transition: border-width 150ms ease-in-out;
+  margin-left: 50vw;
+
+}
+
+.arrow:hover {
+  border-bottom-width: 6px;
+  border-right-width: 6px;
+  border-color: gold;
+  cursor: pointer;
+}
+
+.arrow-container {
+
+  visibility: visible;
+
+}
+
+.up-btn {
+  background-image: linear-gradient(to top left, #ff8a00, #e52e71) !important;
+  color: #fff !important;
+  display: inline-block;
+  font-family: inherit;
+  font-weight: 700;
+  border: 0;
+  border-radius: 8px !important;
+  white-space: nowrap;
+  padding: 1rem 1.5rem;
+  line-height: 1.4;
+  text-align: center;
+  transition: .07s;
+  position: relative;
+  text-decoration: none !important;
+
+  margin-left: 47vw;
+  margin-top: auto;
+}
+
+.back-btn {
+  background-image: linear-gradient(to top left, #ff8a00, #e52e71) !important;
+  color: #fff !important;
+  margin-top: 25px;
+  margin-left: 20px;
+  border-radius: 20px;
+  outline: none;
+  height: 50px;
+  width: 200px;
+  background-color: #9bd231;
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+  visibility: hidden;
+  cursor: pointer;
+
+}
+
+.back-btn:hover {
+  background: gold;
 }
 
 /* .image-box {

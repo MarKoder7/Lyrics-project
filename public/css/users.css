@@ -1,0 +1,42 @@
+.users {
+
+    background-image: linear-gradient(to top left, #ff8a00, #e52e71) !important;
+    color: #fff !important;
+    display: inline-block;
+    font-family: inherit;
+    font-weight: 700;
+    border: 0;
+    border-radius: 8px !important;
+    white-space: nowrap;
+    padding: 1rem 2.5rem;
+    line-height: 1.4;
+    text-align: center;
+    transition: .07s;
+    position: relative;
+    text-decoration: none !important;
+    margin-top: 30px;
+    margin-left: 20px;
+}
+
+form {
+    margin-left: 25px;
+}
+
+
+a {
+    color: #72da25;
+    font-size: 2.5rem;
+
+}
+input {
+
+    outline: none;
+    height: 3.5rem;
+    width: 30%;
+    font-size: 200%;
+    font-weight: 500px;
+    padding: 0.2rem 1rem;
+    border-radius: 50px;
+    border-color:#666567;
+  
+  }

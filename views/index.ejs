@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Song Lyrics</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/main.css">
     <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 
@@ -15,20 +15,26 @@
 
     <h1 class="home-h1">Club Lyrics</h1>
 
-    <div class="home">
+
+    <div class="home" id="home">
         <form id="form" autocomplete="off">
-            <input type="text" id="search" placeholder="Enter artist name or song title...">
+            <input type="text" id="search" class="search-input" placeholder="Enter Artist name or Song title...">
             <button style="visibility: hidden;">Search</button>
         </form>
-    </div>
 
+        <a id="top"></a>
+
+    </div>
     <button onclick="" id="back-btn" class="back-btn"> &#60;&#60; Back To List </button>
 
+    <section class="results" id="results"> </section>
 
-    <section class="result" id="result">
-
-    </section>
-
+    <div class="arrow-container">
+        <a href="#top">
+            <div class="arrow"> </div>
+            <button class="up-btn">BACK TO TOP</button>
+        </a>
+    </div>
 
     <script src="js/menu.js"></script>
     <script src="js/main.js"></script>

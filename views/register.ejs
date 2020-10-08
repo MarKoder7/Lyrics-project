@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Aladin Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Aladin&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/users.css">
+  
+    <script src="/js/menu.js"></script>
+    <title>Register</title>
+</head>
+
+<body>
+    <% include nav %>
+    <h1>Register</h1>
+
+    <form action="/register" method="POST">
+
+        <div>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <br>
+        <button type="submit" class="users">Register</button>
+    </form>
+
+    <br>
+    <a href="/login">Login</a>
+</body>
+
+</html>
