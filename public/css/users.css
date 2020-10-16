@@ -4,7 +4,8 @@
     color: #fff !important;
     display: inline-block;
     font-family: inherit;
-    font-weight: 700;
+    font-weight: 900;
+    font-size: 1.2rem;
     border: 0;
     border-radius: 8px !important;
     white-space: nowrap;
@@ -13,7 +14,6 @@
     text-align: center;
     transition: .07s;
     position: relative;
-    text-decoration: none !important;
     margin-top: 30px;
     margin-left: 20px;
 }
@@ -24,10 +24,11 @@ form {
 
 
 a {
-    color: #72da25;
+    /* color: #72da25; */
     font-size: 2.5rem;
 
 }
+
 input {
 
     outline: none;
@@ -37,6 +38,11 @@ input {
     font-weight: 500px;
     padding: 0.2rem 1rem;
     border-radius: 50px;
-    border-color:#666567;
-  
-  }
+    border-color: #666567;
+
+}
+
+.alert-warning {
+    background-image: linear-gradient(to top left, #ff8a00, #e52e71) !important;
+    color: #fff !important;
+}

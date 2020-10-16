@@ -1,5 +1,5 @@
-if(process.env.NODE_ENV !== 'production'){
-require('dotenv').config()
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config()
 }
 
 var createError = require('http-errors');
@@ -8,15 +8,27 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var indexRouter = require('./routes/index');
-// var usersRouter = require('./routes/users');
+
+var expressLayouts = require('express-ejs-layouts')
 var app = express();
 
 const flash = require('express-flash')
 const session = require('express-session')
 const passport = require('passport')
-const initializePassport = require('./public/js/passport-config');
+require('./config/passport')(passport);
+const mongoose = require('mongoose')
 
 
+//DB Connection  
+
+const db = require('./config/keys').MongoURI;
+
+//Mongo Connection 
+mongoose.connect(db, {
+    useNewUrlParser: true
+  })
+  .then(() => console.log("MongoDB Connected...."))
+  .catch(err => console.log(err))
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -24,18 +36,18 @@ app.set('view engine', 'ejs');
 
 
 
-
+// app.use(expressLayouts)
 app.use(logger('dev'));
 app.use(express.json());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+// Body Parser
 app.use(express.urlencoded({
   extended: false
 }));
 
 
-app.use(passport.initialize())
-app.use(passport.session())
 app.use(flash())
 app.use(session({
   secret: process.env.SESSION_SECRET,
@@ -43,6 +55,18 @@ app.use(session({
   saveUninitialized: false
 }))
 
+// Passport Middleware
+app.use(passport.initialize())
+app.use(passport.session())
+
+
+// Global Variables 
+app.use((req, res, next) => {
+  res.locals.success_msg = req.flash('Success_msg')
+  res.locals.error_msg = req.flash('error_msg')
+  res.locals.error = req.flash('error')
+  next();
+})
 // Router middleware at the end
 app.use('/', indexRouter);
 
@@ -66,8 +90,7 @@ app.use(function (err, req, res, next) {
 });
 
 
-initializePassport(passport,
-  email => users.find(user => user.email === email),
-  id => users.find(user => user.id === id))
-  
+
+
+
 module.exports = app;

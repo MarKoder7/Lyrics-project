@@ -7,36 +7,43 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Song Lyrics</title>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/users.css">
     <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css"> -->
+
+    <!-- FontAwsome -->
+    <script src="https://kit.fontawesome.com/9bb0d8b750.js" crossorigin="anonymous"></script>
+    <script src="js/menu.js"></script>
+  
 </head>
 
 <body>
+
     <% include nav %>
+    <% include ./partials/messages %>
 
+    <a id="top"></a>
     <h1 class="home-h1">Club Lyrics</h1>
-
-
     <div class="home" id="home">
         <form id="form" autocomplete="off">
             <input type="text" id="search" class="search-input" placeholder="Enter Artist name or Song title...">
             <button style="visibility: hidden;">Search</button>
-        </form>
 
-        <a id="top"></a>
+        </form>
 
     </div>
     <button onclick="" id="back-btn" class="back-btn"> &#60;&#60; Back To List </button>
 
     <section class="results" id="results"> </section>
 
-    <div class="arrow-container">
+    <div id="arrow-container" class="arrow-container">
         <a href="#top">
             <div class="arrow"> </div>
-            <button class="up-btn">BACK TO TOP</button>
+            <button id="up-btn" class="up-btn">BACK TO TOP</button>
         </a>
     </div>
 
-    <script src="js/menu.js"></script>
+
     <script src="js/main.js"></script>
 </body>
 

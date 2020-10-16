@@ -1,3 +1,4 @@
+
 const form = document.getElementById('form')
 const search = document.getElementById('search')
 const results = document.getElementById('results')
@@ -64,9 +65,7 @@ function showData(data) {
         img.id = ('img');
         songElement.appendChild(img);
 
-        const container = document.createElement("div");
-        container.className = "container";
-        container.appendChild(songElement)
+     
 
         results.appendChild(songElement)
 
@@ -150,11 +149,12 @@ async function getLyrics(artist, songTitle) {
 
 
     document.getElementById('back-btn').style.visibility = 'visible';
+    // document.getElementById('up-btn').style.visibility = 'visible';
 
     //back to top arrow
-    // document.getElementById('arrow-container').style.visibility = 'visible';
-
-
+    if(lyrics != ""){
+    document.getElementById('arrow-container').style.visibility = 'visible';
+    }
 
     //Scroll to the top of page//
     // window.scrollTo(0, 0);
