@@ -46,3 +46,15 @@ input {
     background-image: linear-gradient(to top left, #ff8a00, #e52e71) !important;
     color: #fff !important;
 }
+
+.m-auto  {
+
+    margin-left: 100px !important;
+}
+
+
+.col-md-6 {
+    -ms-flex: 0 0 50%;
+    flex: 0 0 40%;
+    max-width: 50%;
+}
