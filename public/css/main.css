@@ -3,17 +3,22 @@
 }
 
 body {
-  background: url('../images/Guitar\ under\ water.jpg') fixed no-repeat center;
-  background-size: cover;
+  background: url('../images/Guitar\ under\ water.jpg') top/cover no-repeat;
   font-family: "Noto Sans KR", sans-serif;
   line-height: 1.5;
   height: 100%;
-  color: white;
   margin-top: 0px;
- 
+
 }
 
-
+/* two images background for i can work for a logo
+ body {
+  background-image: url("../images/Lyrics\ Logo.jpg")
+  , url('../images/Guitar\ under\ water.jpg');
+  background-repeat: no-repeat, repeat;
+  background-size: 8%,100%;
+  background-position: top left, top;
+} */
 
 .home-h1 {
   margin-top: 10px;
@@ -318,4 +323,3 @@ input {
   background-image: linear-gradient(to top left, #ff8a00, #e52e71) !important;
   color: #fff !important;
 }
-
